@@ -1,0 +1,12 @@
+
+
+[Unit]
+Description=Run generate-index.service daily at 05:00:00
+
+[Timer]
+OnCalendar=*-*-* 05:00:00  # Runs at exactly 05:00:00 every day
+Persistent=true             # Ensures missed runs are executed on the next boot
+
+[Install]
+WantedBy=timers.target
+

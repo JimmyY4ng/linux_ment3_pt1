@@ -1,0 +1,12 @@
+[Unit]
+Description=Run generate_index script to generate index.html
+After=network-online.target  # Ensure the network is online before running the service.
+
+[Service]
+User=webgen                                # Run as the "webgen" user.
+Group=webgen                               # Use the "webgen" group.
+ExecStart=/var/lib/webgen/bin/generate_index  # Path to the script.
+
+[Install]
+WantedBy=multi-user.target                 # Ensure the service starts in multi-user mode.
+
